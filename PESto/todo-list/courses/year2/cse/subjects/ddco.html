@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>DDCO Checklist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Caveat&family=Courier+New&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; 
+            color: #b1b1b1; 
+            margin: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a; 
+        }
+
+        .logo img {
+            width: 120px; 
+            height: auto;
+        }
+
+        .course-title {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 3rem; 
+            font-weight: bold;
+            text-align: center; 
+            margin: 20px 0; 
+        }
+
+        .checklist-container {
+            display: block;
+            background: #1a1a1a; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            max-width: 800px; 
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem; 
+            margin-bottom: 10px;
+            font-family: 'Chakra Petch', sans-serif;
+            color: #405084; 
+        }
+
+        input[type="checkbox"] {
+            display: none; 
+        }
+
+        label {
+            display: block;
+            padding: 10px;
+            background: #2a2a2a; 
+            border-radius: 5px;
+            margin: 5px 0;
+            cursor: pointer; 
+            transition: background 0.3s, color 0.3s;
+        }
+
+        label:hover {
+            background: #405084; 
+            color: #f49221; 
+        }
+
+        input[type="checkbox"]:checked + label {
+            text-decoration: line-through; 
+            color: gray; 
+            background: #444444; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../../../../../landing/PESto.png" alt="Logo"> 
+        </div>
+    </header>
+    
+    <div class="course-title">Digital Design and Computer Organization</div>
+    
+    <div class="checklist-container">
+        <h1>UNIT 1</h1>
+        <div id="unit1"></div>
+
+        <h1>UNIT 2</h1>
+        <div id="unit2"></div>
+
+        <h1>UNIT 3</h1>
+        <div id="unit3"></div>
+
+        <h1>UNIT 4</h1>
+        <div id="unit4"></div>
+    </div>
+
+    <script>
+        const unit1Items = [
+            "Introduction",
+            "Boolean Functions and Truth Tables",
+            "K-Maps",
+            "SOP and POS",
+            "Don't Care Conditions",
+            "NAND and NOR Implementation",
+            "Analysis Procedure",
+            "Design Procedure",
+            "Adder-Subtractor",
+            "Decimal Adder",
+            "Binary Multiplier",
+            "Magnitude Comparator",
+            "Decoders",
+            "Encoders",
+            "Multiplexers"
+        ];
+
+        const unit2Items = [
+            "Sequential Circuits and Latches - Introduction",
+            "Flip Flops",
+            "Analysis of Clocked Sequential Circuits",
+            "State Reduction and Assignment",
+            "Registers",
+            "Shift Register",
+            "Ripple Counters",
+            "Synchronous Counters",
+            "Other Counters",
+        ];
+
+        const unit3Items = [
+            "Basic Structure of a Computer",
+            "Arithmetic Operations and Characters",
+            "Memory Locations and Address",
+            "Memory Operations - Instructions and Instruction Sequencing",
+            "Addressing Modes",
+            "Machine Instruction and Programs",
+            "I/O Organization",
+            "Standard I/O",
+        ];
+
+        const unit4Items = [
+            "Hashing - Introduction",
+            "Open Hashing",
+            "Closed Hashing",
+            "Collision Handling - Quadratic Probing and Double Hashing",
+            "Applications of Hashing in Cryptography",
+            "Trie Trees and Suffix Trees - Introduction",
+            "Finding a Path in a Network using BFS/DFS",
+            "Trie Trees - Implementation",
+            "Checking Graph Connectivity using BFS/DFS",
+            "Applications - URL Decoding",
+            "Applications - Computer Network Topology",
+            "Indexing in a Data Base"
+        ];
+
+        function createChecklist(items, containerId) {
+            const container = document.getElementById(containerId);
+            items.forEach((item, index) => {
+                const checkboxId = `${containerId}-item${index + 1}`;
+                container.innerHTML += `
+                    <input type="checkbox" id="${checkboxId}">
+                    <label for="${checkboxId}">${item}</label>
+                `;
+            });
+        }
+
+        createChecklist(unit1Items, 'unit1');
+        createChecklist(unit2Items, 'unit2');
+        createChecklist(unit3Items, 'unit3');
+        createChecklist(unit4Items, 'unit4');
+    </script>
+</body>
+</html>

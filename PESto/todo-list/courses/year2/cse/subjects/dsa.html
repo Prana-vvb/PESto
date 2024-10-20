@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>DSA Checklist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Caveat&family=Courier+New&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; 
+            color: #b1b1b1; 
+            margin: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            padding: 20px;
+            background-color: #1a1a1a; 
+        }
+
+        .logo img {
+            width: 120px; 
+            height: auto;
+        }
+
+        .course-title {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 3rem; 
+            font-weight: bold;
+            text-align: center; 
+            margin: 20px 0; 
+        }
+
+        .checklist-container {
+            display: block;
+            background: #1a1a1a; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            max-width: 800px; 
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem; 
+            margin-bottom: 10px;
+            font-family: 'Chakra Petch', sans-serif;
+            color: #405084; 
+        }
+
+        input[type="checkbox"] {
+            display: none; 
+        }
+
+        label {
+            display: block;
+            padding: 10px;
+            background: #2a2a2a; 
+            border-radius: 5px;
+            margin: 5px 0;
+            cursor: pointer; 
+            transition: background 0.3s, color 0.3s;
+        }
+
+        label:hover {
+            background: #405084; 
+            color: #f49221; 
+        }
+
+        input[type="checkbox"]:checked + label {
+            text-decoration: line-through; 
+            color: gray; 
+            background: #444444; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../../../../../landing/PESto.png" alt="Logo"> 
+        </div>
+    </header>
+    <div class="course-title">Data Structures and Algorithms</div>
+    
+    <div class="checklist-container">
+        <h1>UNIT 1</h1>
+        <div id="unit1"></div>
+
+        <h1>UNIT 2</h1>
+        <div id="unit2"></div>
+
+        <h1>UNIT 3</h1>
+        <div id="unit3"></div>
+
+        <h1>UNIT 4</h1>
+        <div id="unit4"></div>
+    </div>
+
+    <script>
+        const unit1Items = [
+            "Introduction to DSA",
+            "Overview of Static and Dynamic Memory Allocation",
+            "Singly Linked List",
+            "Doubly Linked List",
+            "Circular Singly Linked List",
+            "Circular Doubly Linked List",
+            "Multilist",
+            "Intro to sparse matrix (structure)",
+            "Skip List",
+            "Skip List Operations",
+            "Stack - Array Implementation",
+            "Stack - Linked List Implementation",
+            "Applications of Stacks - Recursion",
+            "Applications of Stacks - Tower of Hanoi",
+            "Infix to Prefix and Postfix Expression",
+            "Postfix Evaluation",
+            "Parenthesis Matching",
+        ];
+
+        const unit2Items = [
+            "Queue - Introduction",
+            "Queue - Linked List Implementation",
+            "Queue - Array Implementation",
+            "Circular Queue - Linked List Implementation",
+            "Circular Queue - Array Implementation",
+            "Priority Queue",
+            "Dequeue and its Applications using Linked Lists and Arrays",
+            "Applications of Queue",
+            "Case Study - Josephus Problem",
+            "CPU Scheduling",
+            "Binary Trees - Introduction",
+            "Binary Trees - Traversal",
+            "Binary Search Trees - Introduction",
+            "n-Ary Trees and Forest",
+            "Conversion of an N-ary tree and a forest to a binary tree",
+        ];
+
+        const unit3Items = [
+            "Binary Search Trees",
+            "Binary Search Trees - Operations",
+            "Threaded Binary Tree - Introduction",
+            "Threaded Binary Tree - Implementation",
+            "Heap Tree - Introduction",
+            "Heap Tree - Implementation",
+            "Implementation of Priority Queue using Min/Max Heap",
+            "Balanced Trees",
+            "AVL Trees",
+            "AVL Rotation",
+            "Splay Trees",
+            "n-Ary Trees and Forest - Traversal",
+            "Graphs - Introduction",
+            "Representation of Graph - Adjacency Matrix",
+            "Representation of Graph - Adjacency List",
+            "Graphs - Implementation using Adjacency Matrix",
+            "Graphs - Implementation using Adjacency List",
+            "Graphs - Traversal using Depth First Search",
+            "Graphs - Traversal using Breadth First Search",
+            "Other Tree Operations"
+        ];
+
+        const unit4Items = [
+            "Hashing - Introduction",
+            "Open Hashing",
+            "Closed Hashing",
+            "Collision Handling - Quadratic Probing and Double Hashing",
+            "Applications of Hashing in Cryptography",
+            "Trie Trees and Suffix Trees - Introduction",
+            "Finding a Path in a Network using BFS/DFS",
+            "Trie Trees - Implementation",
+            "Checking Graph Connectivity using BFS/DFS",
+            "Applications - URL Decoding",
+            "Applications - Computer Network Topology",
+            "Indexing in a Data Base"
+        ];
+
+        function createChecklist(items, containerId) {
+            const container = document.getElementById(containerId);
+            items.forEach((item, index) => {
+                const checkboxId = `${containerId}-item${index + 1}`;
+                container.innerHTML += 
+                    `<input type="checkbox" id="${checkboxId}">` +
+                    `<label for="${checkboxId}">${item}</label>`;
+            });
+        }
+
+        createChecklist(unit1Items, 'unit1');
+        createChecklist(unit2Items, 'unit2');
+        createChecklist(unit3Items, 'unit3');
+        createChecklist(unit4Items, 'unit4');
+    </script>
+</body>
+</html>
