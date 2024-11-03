@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Header from '../components/Header';
+import { signIn } from "next-auth/react";
 
 const Home = () => {
     useEffect(() => {
@@ -51,7 +52,7 @@ const Home = () => {
                     <span className="cursor">|</span>
                 </h2>
                 <p>Get Productive!</p>
-                <div className="google-login">
+                <div className="google-login" onClick={() => signIn('google')}>
                     <i className="fa-brands fa-google fa-3x" style={{ color: '#405084' }}></i>
                     <a href="#" className="google-btn">Login with Google</a>
                 </div>
