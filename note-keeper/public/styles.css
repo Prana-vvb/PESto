@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-family: 'Chakra Petch', sans-serif;
+  }
+  body {
+    background-color: #121212; 
+    color: #b1b1b1; 
+    padding: 0 16px;
+  }
+  
+ 
+  header {
+    background-color: #1e1e1e;
+    margin: auto -16px;
+    padding: 16px 32px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .pes{
+    color: #f49221;
+  }
+
+  .to{
+    color: #405084;
+  }
+  
+  header h1 {
+    font-family: 'Caveat', cursive;
+    font-weight: 900;
+  }
+  
+  /* Footer Styling */
+  footer {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    color: #b1b1b1; /* Light text for footer */
+  }
+  
+  /* Notes Container with Flex Wrapping */
+  .notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 0;
+  }
+  
+  /* Note Card Styling */
+  .note {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    width: 240px;
+    min-width: 240px;
+    color: #b1b1b1;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  
+  .note:hover {
+    transform: scale(1.05); 
+  }
+  
+  .note h1 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: #405084; 
+  }
+  
+  .note p {
+    font-size: 1em;
+    margin-bottom: 12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  
+  .add-note-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f49221;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin: 10px;
+  }
+  
+  .add-note-button:hover {
+    background-color: #64b2ac; 
+  }
+
+.delete-button {
+    padding: 10px 18px; 
+    background-color: #d32f2f; 
+    color: #ffffff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s, transform 0.2s; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  }
+  
+ 
+  .delete-button:hover {
+    background-color: #c62828; 
+    transform: scale(1.05); 
+  }
+  
+  
