@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 const Header = () => {
+    // Change links for prod
     return (
         <header>
             <div className="logo">
@@ -8,7 +9,7 @@ const Header = () => {
             </div>
             <nav>
                 <Link href="/" className="nav-btn">Get Started</Link>
-                <Link href="/gpa-calculator" className="nav-btn">GPA Calculator</Link>
+                <Link href="http://localhost:3001" className="nav-btn">GPA Calculator</Link>
                 <Link href="#about-us" className="nav-btn">About Us</Link>
             </nav>
         </header>

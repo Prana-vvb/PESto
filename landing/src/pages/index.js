@@ -1,8 +1,12 @@
 import { useEffect } from 'react';
+import { useSession, signIn, signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import Header from '../components/Header';
-import { signIn } from "next-auth/react";
 
 const Home = () => {
+    const { data: session } = useSession();
+    const router = useRouter();
+
     useEffect(() => {
         const texts = ["Lock in.", "Grind.", "Ee sem MRD nimde."];
         let count = 0;
@@ -42,6 +46,7 @@ const Home = () => {
         };
     }, []);
 
+    // Change URLs for prod
     return (
         <div>
             <Header />
@@ -52,11 +57,27 @@ const Home = () => {
                     <span className="cursor">|</span>
                 </h2>
                 <p>Get Productive!</p>
-                <div className="google-login" onClick={() => signIn('google')}>
-                    <i className="fa-brands fa-google fa-3x" style={{ color: '#405084' }}></i>
-                    <a href="#" className="google-btn">Login with Google</a>
-                </div>
+
+                {!session ? (
+                    <div className="google-login" onClick={() => signIn('google')}>
+                        <i className="fa-brands fa-google fa-3x" style={{ color: '#405084' }}></i>
+                        <a className="google-btn">Login with Google</a>
+                    </div>
+                ) : (
+                    <div className="logged-in">
+                        <button onClick={() => router.push('http://localhost:3002')} className="btn">
+                            Note Keeper
+                        </button>
+                        <button onClick={() => router.push('http://localhost:3003')} className="btn">
+                            TODO List
+                        </button>
+                        <button onClick={() => signOut({ callbackUrl: "/" })} className="btn">
+                            Log Out
+                        </button>
+                    </div>
+                )}
             </div>
+
             <section id="about-us">
                 <h2>What is PESto?</h2>
                 <p>PESto is a website tailor-made for PES University students to help you keep track of your coursework.</p>
