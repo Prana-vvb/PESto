@@ -1,12 +1,12 @@
 import React from "react";
 import Calculator from "./components/Calculator";
-import "./App.css";
+import "../styles/gpa.css";
 
 function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <div className="logo"><a href="../../landing.html"><span class='PES'>PES</span><span class='to'>to</span></a></div>
+        <div className="logo"><span class='PES'>PES</span><span class='to'>to</span></div>
       </header>
       <Calculator />
     </div>
