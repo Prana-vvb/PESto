@@ -2,27 +2,24 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon, faMugHot } from '@fortawesome/free-solid-svg-icons';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import React Router
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-// Import components for each course
 import Afll from './components/year2/cse/Afll.js';
 import Ddco from './components/year2/cse/Ddco.js';
 import Dsa from './components/year2/cse/Dsa.js';
 import Mcse from './components/year2/cse/Mcse.js';
 import Wt from './components/year2/cse/Wt.js';
-
-// Import the CSE component (the toggleable course list)
 import Cse from './components/year2/Cse';
 
 function App() {
   const [isYear2Open, setYear2Open] = useState(false);
+  const [greeting, setGreeting] = useState('');
+  const [icon, setIcon] = useState(null);
+  const [isLofiPlaying, setLofiPlaying] = useState(false);
 
   const toggleCourses = (year) => {
     if (year === 2) setYear2Open(!isYear2Open);
   };
-
-  const [greeting, setGreeting] = useState('');
-  const [icon, setIcon] = useState(null);
 
   useEffect(() => {
     const date = new Date();
@@ -43,14 +40,22 @@ function App() {
     }
   }, []);
 
+  const toggleLofi = () => {
+    setLofiPlaying(!isLofiPlaying);
+  };
+
   return (
     <Router>
       <div>
         {/* Header Section */}
         <header>
           <div className="logo">
-            <img src="../../landing/public/PESto.png" alt="Logo" width="120" />
+            <h1><span class='PES'>PES</span><span class='to'>to</span></h1>
           </div>
+          {/* Lofi Music Player Button */}
+          <button className="lofi-button" onClick={toggleLofi}>
+            {isLofiPlaying ? 'Pause Lofi' : 'Play Lofi'}
+          </button>
         </header>
 
         {/* Greeting Section */}
@@ -65,6 +70,14 @@ function App() {
         <div className="content">
           <Cse isYear2Open={isYear2Open} toggleCourses={toggleCourses} />
         </div>
+
+        {/* Lofi Audio Player */}
+        {isLofiPlaying && (
+          <audio autoPlay loop>
+            <source src="https://ec3.yesstreaming.net:3755/stream" type="audio/mp3" />
+            Your browser does not support the audio element.
+          </audio>
+        )}
 
         {/* Define routes for the Year 2 courses */}
         <Routes>
