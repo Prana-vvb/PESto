@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
-import './Afll.css'; // External CSS file for styles (you can include the same styles)
+import './Afll.css'; // External CSS file for styles
 
-const Checklist = ({ items, unit }) => {
-    // Maintain the state of checkboxes for each unit
-    const [checkedItems, setCheckedItems] = useState({});
+const Checklist = ({ items, unit, storageKey }) => {
+    // Load the saved state from localStorage or initialize with default values
+    const [checkedItems, setCheckedItems] = useState(() => {
+        const savedState = localStorage.getItem(storageKey);
+        return savedState ? JSON.parse(savedState) : {};
+    });
 
-    // Handle checkbox change
+    // Handle checkbox change and update the state
     const handleCheckboxChange = (index) => {
-        setCheckedItems((prevState) => ({
-            ...prevState,
-            [index]: !prevState[index],
-        }));
+        setCheckedItems((prevState) => {
+            const updatedState = {
+                ...prevState,
+                [index]: !prevState[index],
+            };
+
+            // Save the updated state to localStorage
+            localStorage.setItem(storageKey, JSON.stringify(updatedState));
+            return updatedState;
+        });
     };
 
     return (
@@ -86,17 +95,28 @@ const AFLLChecklist = () => {
 
     return (
         <div>
-            <header>
-                <div className="logo">
-                    <img src="../../../../../landing/PESto.png" alt="Logo" />
-                </div>
-            </header>
             <div className="course-title">Automata Formal Languages and Logic</div>
 
-            <Checklist items={unit1Items} unit="UNIT 1" />
-            <Checklist items={unit2Items} unit="UNIT 2" />
-            <Checklist items={unit3Items} unit="UNIT 3" />
-            <Checklist items={unit4Items} unit="UNIT 4" />
+            <Checklist
+                items={unit1Items}
+                unit="UNIT 1"
+                storageKey="afll-unit-1-checklist"
+            />
+            <Checklist
+                items={unit2Items}
+                unit="UNIT 2"
+                storageKey="afll-unit-2-checklist"
+            />
+            <Checklist
+                items={unit3Items}
+                unit="UNIT 3"
+                storageKey="afll-unit-3-checklist"
+            />
+            <Checklist
+                items={unit4Items}
+                unit="UNIT 4"
+                storageKey="afll-unit-4-checklist"
+            />
         </div>
     );
 };

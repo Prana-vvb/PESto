@@ -1,5 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { useNavigate } from 'react-router-dom'; 
+import './Cse.css';
 
 const Cse = ({ isYear2Open, toggleCourses }) => {
   const navigate = useNavigate(); // Initialize navigate
@@ -10,7 +11,7 @@ const Cse = ({ isYear2Open, toggleCourses }) => {
   };
 
   return (
-    <div>
+    <div className="cse-container">
       {/* Year 2 CSE/AIML */}
       <h3>
         <i className="fa-solid fa-microchip"></i> Year 2 - CSE/AIML
@@ -18,26 +19,25 @@ const Cse = ({ isYear2Open, toggleCourses }) => {
           {isYear2Open ? 'Hide Courses' : 'Show Courses'}
         </button>
       </h3>
-      {isYear2Open && (
-        <div className="courses">
-          {/* Use onClick to navigate programmatically */}
-          <button className="year-link" onClick={() => handleNavigation('/year2/cse/ddco')}>
-            Digital Design and Computer Organization (DDCO)
-          </button>
-          <button className="year-link" onClick={() => handleNavigation('/year2/cse/dsa')}>
-            Data Structures and Algorithms (DSA)
-          </button>
-          <button className="year-link" onClick={() => handleNavigation('/year2/cse/mcse')}>
-            Mathematics for Computer Science Engineering (MCSE)
-          </button>
-          <button className="year-link" onClick={() => handleNavigation('/year2/cse/afll')}>
-            Automata and Formal Language Logic (AFLL)
-          </button>
-          <button className="year-link" onClick={() => handleNavigation('/year2/cse/wt')}>
-            Web Technologies (WT)
-          </button>
-        </div>
-      )}
+      {/* Toggle the display of the courses */}
+      <div className="courses" style={{ display: isYear2Open ? 'block' : 'none' }}>
+        {/* Use onClick to navigate programmatically */}
+        <button className="year-link" onClick={() => handleNavigation('/year2/cse/ddco')}>
+          Digital Design and Computer Organization (DDCO)
+        </button>
+        <button className="year-link" onClick={() => handleNavigation('/year2/cse/dsa')}>
+          Data Structures and Algorithms (DSA)
+        </button>
+        <button className="year-link" onClick={() => handleNavigation('/year2/cse/mcse')}>
+          Mathematics for Computer Science Engineering (MCSE)
+        </button>
+        <button className="year-link" onClick={() => handleNavigation('/year2/cse/afll')}>
+          Automata and Formal Language Logic (AFLL)
+        </button>
+        <button className="year-link" onClick={() => handleNavigation('/year2/cse/wt')}>
+          Web Technologies (WT)
+        </button>
+      </div>
     </div>
   );
 }

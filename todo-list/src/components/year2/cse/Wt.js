@@ -19,19 +19,27 @@ const ChecklistItem = ({ label, checked, onChange }) => {
 };
 
 // Checklist component to render the list of items for a unit
-const Checklist = ({ items, unit }) => {
-    const [checkedItems, setCheckedItems] = useState(
-        items.reduce((acc, item, index) => {
+const Checklist = ({ items, unit, storageKey }) => {
+    // Load saved state from localStorage or initialize with default values
+    const [checkedItems, setCheckedItems] = useState(() => {
+        const savedState = localStorage.getItem(storageKey);
+        return savedState ? JSON.parse(savedState) : items.reduce((acc, _, index) => {
             acc[index] = false;  // Initialize each item as unchecked
             return acc;
-        }, {})
-    );
+        }, {});
+    });
 
     const handleCheckboxChange = (index) => {
-        setCheckedItems((prevState) => ({
-            ...prevState,
-            [index]: !prevState[index],
-        }));
+        setCheckedItems((prevState) => {
+            const updatedState = {
+                ...prevState,
+                [index]: !prevState[index],
+            };
+
+            // Save the updated state to localStorage
+            localStorage.setItem(storageKey, JSON.stringify(updatedState));
+            return updatedState;
+        });
     };
 
     return (
@@ -110,18 +118,28 @@ const WebTechChecklist = () => {
 
     return (
         <div>
-            <header>
-                <div className="logo">
-                    <img src="path-to-logo.png" alt="Logo" />
-                </div>
-            </header>
-
             <div className="course-title">Web Technologies</div>
 
-            <Checklist items={unit1Items} unit="UNIT 1" />
-            <Checklist items={unit2Items} unit="UNIT 2" />
-            <Checklist items={unit3Items} unit="UNIT 3" />
-            <Checklist items={unit4Items} unit="UNIT 4" />
+            <Checklist
+                items={unit1Items}
+                unit="UNIT 1"
+                storageKey="webtech-unit-1-checklist"
+            />
+            <Checklist
+                items={unit2Items}
+                unit="UNIT 2"
+                storageKey="webtech-unit-2-checklist"
+            />
+            <Checklist
+                items={unit3Items}
+                unit="UNIT 3"
+                storageKey="webtech-unit-3-checklist"
+            />
+            <Checklist
+                items={unit4Items}
+                unit="UNIT 4"
+                storageKey="webtech-unit-4-checklist"
+            />
         </div>
     );
 };

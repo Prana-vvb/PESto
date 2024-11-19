@@ -53,6 +53,7 @@ h1 {
     display: flex;
     align-items: center;
     margin: 5px 0;
+    width: 100%; /* Make the checkbox item span the full width */
 }
 
 input[type='checkbox'] {
@@ -61,6 +62,7 @@ input[type='checkbox'] {
 
 label {
     display: block;
+    width: 100%; /* Ensure the label spans the full width */
     padding: 10px;
     background: #2a2a2a;
     border-radius: 5px;
@@ -74,7 +76,7 @@ label:hover {
     color: #f49221;
 }
 
-input[type='checkbox']:checked+label {
+input[type='checkbox']:checked + label {
     text-decoration: line-through;
     color: gray;
     background: #444444;

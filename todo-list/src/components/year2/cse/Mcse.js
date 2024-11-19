@@ -2,14 +2,24 @@ import React, { useState } from 'react';
 import './Mcse.css';
 
 // Checklist component to render each unit's checklist
-const Checklist = ({ items, unit }) => {
-    const [checkedItems, setCheckedItems] = useState({});
+const Checklist = ({ items, unit, storageKey }) => {
+    // Load saved state from localStorage or initialize with default values
+    const [checkedItems, setCheckedItems] = useState(() => {
+        const savedState = localStorage.getItem(storageKey);
+        return savedState ? JSON.parse(savedState) : {};
+    });
 
     const handleCheckboxChange = (index) => {
-        setCheckedItems((prevState) => ({
-            ...prevState,
-            [index]: !prevState[index],
-        }));
+        setCheckedItems((prevState) => {
+            const updatedState = {
+                ...prevState,
+                [index]: !prevState[index],
+            };
+
+            // Save the updated state to localStorage
+            localStorage.setItem(storageKey, JSON.stringify(updatedState));
+            return updatedState;
+        });
     };
 
     return (
@@ -89,17 +99,28 @@ const MCSEChecklist = () => {
 
     return (
         <div>
-            <header>
-                <div className="logo">
-                    <img src="path-to-logo.png" alt="Logo" />
-                </div>
-            </header>
             <div className="course-title">Mathematics for Computer Science Engineers</div>
 
-            <Checklist items={unit1Items} unit="UNIT 1" />
-            <Checklist items={unit2Items} unit="UNIT 2" />
-            <Checklist items={unit3Items} unit="UNIT 3" />
-            <Checklist items={unit4Items} unit="UNIT 4" />
+            <Checklist
+                items={unit1Items}
+                unit="UNIT 1"
+                storageKey="mcse-unit-1-checklist"
+            />
+            <Checklist
+                items={unit2Items}
+                unit="UNIT 2"
+                storageKey="mcse-unit-2-checklist"
+            />
+            <Checklist
+                items={unit3Items}
+                unit="UNIT 3"
+                storageKey="mcse-unit-3-checklist"
+            />
+            <Checklist
+                items={unit4Items}
+                unit="UNIT 4"
+                storageKey="mcse-unit-4-checklist"
+            />
         </div>
     );
 };
