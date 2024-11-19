@@ -8,7 +8,7 @@ function App() {
     useEffect(() => {
         const fetchNotes = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/api/notes");
+                const response = await axios.get("http://localhost:8080/api/notes");
                 setNotes(response.data);
             } catch (err) {
                 console.error("Error fetching notes:", err);
@@ -20,7 +20,7 @@ function App() {
 
     const addNote = async () => {
         try {
-            const response = await axios.post("http://localhost:5000/api/notes", {
+            const response = await axios.post("http://localhost:8080/api/notes", {
                 title: "",
                 content: "",
             });
@@ -32,7 +32,7 @@ function App() {
 
     const deleteNote = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/notes/${id}`);
+            await axios.delete(`http://localhost:8080/api/notes/${id}`);
             setNotes((prevNotes) => prevNotes.filter((note) => note._id !== id));
         } catch (err) {
             console.error("Error deleting note:", err);

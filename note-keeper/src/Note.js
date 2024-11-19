@@ -18,7 +18,7 @@ function Note({ id, onDelete, title, content }) {
         setIsSaving(true);
         try {
             // Update note in the database
-            await axios.put(`http://localhost:5000/api/notes/${id}`, {
+            await axios.put(`http://localhost:8080/api/notes/${id}`, {
                 title: noteTitle,
                 content: noteContent,
             });
