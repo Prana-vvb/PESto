@@ -10,24 +10,37 @@ body {
     color: #b1b1b1;
 }
 
+
+
+/* Header styling */
 header {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centering logo */
     align-items: center;
     padding: 20px;
     background-color: #1a1a1a;
+    position: relative; /* Make header relative for positioning of the lofi button */
 }
 
-.logo img {
-    width: 120px;
-    height: auto;
+.PES {
+    color: #f49221;
+    font-family: 'Caveat', cursive;
+    font-weight: 900;
 }
 
+.to {
+    color: #405084;
+    font-family: 'Caveat', cursive;
+    font-weight: 900;
+}
+
+/* Greeting Section */
 h2 {
     margin: 25px;
     font-size: 2.2rem;
 }
 
+/* Main Content */
 .content {
     margin: 30px;
     font-size: 1.3rem;
@@ -39,6 +52,7 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Course Links */
 .year-link {
     display: block;
     margin: 10px 0;
@@ -79,4 +93,44 @@ button.toggle-btn:hover {
 button.toggle-btn:focus {
     outline: none;
     box-shadow: 0 0 8px rgba(64, 80, 132, 0.6); 
+}
+
+/* Lofi Player Button */
+.lofi-button {
+    background-color: #f49221;
+    color: #121212;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: absolute; /* Position the button at the top-right of the header */
+    top: 25px;
+    right: 20px;
+}
+
+.lofi-button:hover {
+    background-color: #64b2ac;
+    transform: scale(1.05);
+}
+
+/* Audio player controls (hidden by default) */
+audio {
+    display: none;
+}
+
+
+.lofi-playing {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
