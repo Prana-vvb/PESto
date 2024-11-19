@@ -116,5 +116,80 @@
     background-color: #c62828; 
     transform: scale(1.05); 
   }
-  
-  
+
+/* Textarea Styling */
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333; 
+  border-radius: 8px; 
+  background-color: #1e1e1e; 
+  color: #b1b1b1; 
+  font-size: 1em;
+  resize: vertical; /* Allow vertical resizing only */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+/* Textarea Styling */
+textarea {
+  width: 100%;
+  height: 150px; /* Increased height for better usability */
+  padding: 12px;
+  border: 1px solid #333; /* Subtle border to match dark theme */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  background-color: #1e1e1e; /* Match note card background */
+  color: #b1b1b1; /* Match the text color of the notes */
+  font-size: 1em;
+  resize: vertical; /* Allow vertical resizing only */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Textarea Hover Effect */
+textarea:hover {
+  border-color: #f49221; /* Highlight border on hover */
+}
+
+/* Textarea Focus Effect */
+textarea:focus {
+  outline: none; /* Remove default outline */
+  border-color: #64b2ac; /* Change border color on focus */
+  box-shadow: 0 0 5px #64b2ac; /* Add a glowing focus effect */
+}
+
+/* Input Styling for Title */
+input[type="text"] {
+  width: 100%;
+  margin-top: 5px;
+  padding: 12px;
+  border: 1px solid #333; /* Subtle border to match dark theme */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  background-color: #1e1e1e; /* Match textarea background */
+  color: #b1b1b1; /* Match the text color */
+  font-size: 1.2em; /* Slightly larger font for title input */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Hover Effect */
+input[type="text"]:hover {
+  border-color: #f49221; /* Highlight border on hover */
+}
+
+/* Input Focus Effect */
+input[type="text"]:focus {
+  outline: none; /* Remove default outline */
+  border-color: #64b2ac; /* Change border color on focus */
+  box-shadow: 0 0 5px #64b2ac; /* Add a glowing focus effect */
+}
+
+button{
+  background-color: #1e1e1e;
+  color: #b1b1b1;
+  border: 1px solid #b1b1b1;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+
+
+}

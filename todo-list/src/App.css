@@ -55,17 +55,28 @@ h3 {
     margin-left: 20px;
 }
 
+/* Button Styling */
 button.toggle-btn {
-    background: none;
+    background: #2a2a2a;
     border: none;
-    color: #405084;
+    color: #fff;
     cursor: pointer;
     font-size: 1.2rem;
     margin-left: 10px;
-    padding: 5px;
-    transition: color 0.3s;
+    padding: 10px 20px;
+    border-radius: 8px; 
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+    display: inline-flex;
+    align-items: center;
 }
 
 button.toggle-btn:hover {
+    background: #405084;
     color: #ff6e00;
+    transform: scale(1.05); 
+}
+
+button.toggle-btn:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(64, 80, 132, 0.6); 
 }
