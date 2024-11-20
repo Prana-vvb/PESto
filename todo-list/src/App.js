@@ -35,7 +35,7 @@ function App() {
       setGreeting('Good Evening!');
       setIcon(faMugHot);
     } else {
-      setGreeting('Good Night!');
+      setGreeting('Good Evening!');
       setIcon(faMoon);
     }
   }, []);
