@@ -49,7 +49,7 @@ const Home = () => {
     // Change URLs for prod
     return (
         <div>
-            <Header />
+            <Header userImage={session?.user?.image} userName={session?.user?.name} />
             <div className="container">
                 <h1>Welcome to <span className='PES'>PES</span><span className='to'>to</span></h1>
                 <h2 className="typing">
