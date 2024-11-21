@@ -89,18 +89,13 @@ const DDCOChecklist = () => {
     ];
 
     const unit4Items = [
-        'Hashing - Introduction',
-        'Open Hashing',
-        'Closed Hashing',
-        'Collision Handling - Quadratic Probing and Double Hashing',
-        'Applications of Hashing in Cryptography',
-        'Trie Trees and Suffix Trees - Introduction',
-        'Finding a Path in a Network using BFS/DFS',
-        'Trie Trees - Implementation',
-        'Checking Graph Connectivity using BFS/DFS',
-        'Applications - URL Decoding',
-        'Applications - Computer Network Topology',
-        'Indexing in a Data Base',
+        'Shift - Add Multiplier/Divider - 1',
+        'Shift - Add Multiplier/Divider - 2',
+        'Shift - Add Multiplier/Divider - 3',
+        'Fundamental Concepts',
+        'Floating Point',
+        'Execution of Complete Instruction',
+        'Hardwired Control, Micro programmed control',
     ];
 
     return (

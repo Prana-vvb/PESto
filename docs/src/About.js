@@ -16,8 +16,6 @@ const About = () => {
 
             <h3>Our Mission</h3>
             <p>PESto aims to empower PES University students to achieve academic excellence by providing a streamlined way to manage coursework and deadlines.</p>
-
-            <button onClick={() => window.history.back()} className="btn">Go Back</button>
         </div>
     );
 };
