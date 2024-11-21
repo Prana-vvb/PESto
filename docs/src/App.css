@@ -1,3 +1,4 @@
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +12,7 @@ body {
     margin: 0;
 }
 
+/* Header and Navigation */
 header {
     display: flex;
     justify-content: space-between;
@@ -45,116 +47,40 @@ nav {
     color: #f49221;
 }
 
-.container {
+/* About Section */
+.about-us {
+    margin: 100px auto;
     text-align: center;
-    margin-top: 50px;
-    width: 100%;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 6rem;
-    margin-bottom: 20px;
-    font-family: 'Chakra Petch', sans-serif;
-}
-
-.PES {
-    color: #f49221;
-    font-family: 'Caveat', cursive;
-    font-weight: 900;
-}
-
-.to {
-    color: #405084;
-    font-family: 'Caveat', cursive;
-    font-weight: 900;
-}
-
-h1 .welcome {
+    padding: 50px 20px;
+    background-color: #1a1a1a;
     color: #b1b1b1;
 }
 
-.typing {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 4rem;
-    font-weight: lighter;
-    color: #405084;
-    min-height: 50px;
+.about-us h2 {
+    font-size: 2.8rem;
     margin-bottom: 20px;
-}
-
-.cursor {
-    display: inline-block;
-    font-weight: lighter;
-    font-size: 4rem;
-    color: #b1b1b1;
-    animation: blink 0.8s steps(1) infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
-}
-
-p {
-    font-size: 1.6rem;
-    margin: 30px 0;
-    line-height: 1.6;
-}
-
-.cta-btn {
-    padding: 12px 25px;
-    background-color: #f49221;
-    color: #121212;
-    text-decoration: none;
-    font-size: 1.4rem;
-    border-radius: 30px;
-    transition: 0.3s ease;
-}
-
-.cta-btn:hover {
-    background-color: #ff6e00;
     color: white;
-    transform: translateY(-3px);
 }
 
-.google-login {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-.google-logo {
-    width: 32px;
-    height: 32px;
-}
-
-.google-btn {
-    padding: 15px 30px;
-    background-color: #333333;
-    border: 2px solid #f49221;
+.about-us p {
+    font-size: 1.6rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
     color: #b1b1b1;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 1.4rem;
-    transition: 0.3s ease;
 }
 
-.google-btn:hover {
-    background-color: #b1b1b1;
-    color: #333333;
-    transform: scale(1.05);
+.about-us ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.6rem;
 }
 
-.logged-in {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.about-us li {
+    margin-bottom: 10px;
 }
 
+/* Buttons */
 .btn {
     color: white;
     text-decoration: none;
@@ -171,29 +97,31 @@ p {
     color: #f49221;
 }
 
-#about-us {
-    margin: 100px auto;
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #1a1a1a;
-    color: #b1b1b1;
-}
-
-#about-us h2 {
-    font-size: 2.8rem;
+/* Contact & Resources */
+h1 {
+    font-size: 3.8rem;
     margin-bottom: 20px;
+    text-align: center;
     color: white;
 }
 
-#about-us p {
+a {
+    color: #f49221;
+    text-decoration: none;
     font-size: 1.6rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
-    color: #b1b1b1;
+    transition: color 0.3s;
 }
 
-.avatar {
-    margin: 10px;
-    border-radius: 50%;
+a:hover {
+    color: #ff6e00;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.6rem;
+}
+
+ul li {
+    margin-bottom: 10px;
 }
