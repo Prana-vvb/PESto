@@ -77,11 +77,6 @@ const Home = () => {
                     </div>
                 )}
             </div>
-
-            <section id="about-us">
-                <h2>What is PESto?</h2>
-                <p>PESto is a website tailor-made for PES University students to help you keep track of your coursework.</p>
-            </section>
         </div>
     );
 };
