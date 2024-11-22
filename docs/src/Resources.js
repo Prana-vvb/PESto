@@ -4,7 +4,6 @@ const Resources = () => {
     return (
         <div>
             <h1>Useful Resources</h1>
-            <p>Here are some useful links related to PESto:</p>
             <ul>
                 <li>
                     <a

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Header = ({ userImage, userName }) => {
-    // Change links for prod
+    //TODO: Change links for prod
     return (
         <header>
             <div className="logo">
