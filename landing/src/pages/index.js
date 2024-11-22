@@ -29,16 +29,15 @@ const Home = () => {
                         index = 0;
                         count++;
                         type();
-                    }, 1000);  // Pause before starting to delete
-                }, 2000); // Pause after typing the full sentence
+                    }, 1000);
+                }, 2000);
             } else {
                 setTimeout(type, 100);
             }
         };
 
-        type(); // Start the typing effect
+        type();
 
-        // Cleanup function
         return () => {
             count = 0;
             index = 0;
@@ -46,7 +45,7 @@ const Home = () => {
         };
     }, []);
 
-    // Change URLs for prod
+    //TODO: Change URLs for prod
     return (
         <div>
             <Header userImage={session?.user?.image} userName={session?.user?.name} />
@@ -65,11 +64,11 @@ const Home = () => {
                     </div>
                 ) : (
                     <div className="logged-in">
-                        <button onClick={() => router.push('http://localhost:3002')} className="btn">
-                            Note Keeper
-                        </button>
                         <button onClick={() => router.push('http://localhost:3003')} className="btn">
                             TODO List
+                        </button>
+                        <button onClick={() => router.push('http://localhost:3002')} className="btn">
+                            Forum
                         </button>
                         <button onClick={() => signOut({ callbackUrl: "/" })} className="btn">
                             Log Out
