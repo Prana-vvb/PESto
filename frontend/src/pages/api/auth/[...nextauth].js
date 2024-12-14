@@ -12,15 +12,12 @@ export default NextAuth({
         }),
     ],
     callbacks: {
-        async signIn({ user, account, profile }) {
-            // Connect to the MongoDB client
+        async signIn({ user }) {
             await client.connect();
             const db = client.db("test");
 
-            // Check if user already exists
             const existingUser = await db.collection("users").findOne({ email: user.email });
 
-            // If user does not exist, insert into MongoDB
             if (!existingUser) {
                 await db.collection("users").insertOne({
                     name: user.name,
